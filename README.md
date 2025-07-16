@@ -1,51 +1,49 @@
-MikroTik Script Manager 🌐✨
-A beautiful Python GUI for managing RouterOS scripts
+# MikroTik Script Manager 🌐✨
 
-https://screenshot.png
-(Light and dark mode shown side-by-side)
+![App Screenshot](screenshot.png)  
+*Elegant GUI for managing RouterOS scripts*
 
-🚀 Key Features
-Feature	Description
-Syntax-Highlighted Editor	Write scripts with RouterOS-specific highlighting. ▶️ Demo
-Smart Variables	Replace placeholders via forms (e.g., {ip-address} → GUI input).
-Project Templates	Save script collections as reusable templates.
-GitHub Sync	Import/export scripts directly to GitHub repositories.
-Cross-Platform	Windows, macOS, and Linux support.
-📦 Quick Start
-Requirements
+A feature-rich desktop application for creating, organizing, and managing MikroTik RouterOS scripts with a beautiful interface.
+
+## 🚀 Features
+
+- **Code Editor with Syntax Highlighting**  
+  Syntax Highlighting Demo
+- **Smart Variable Management**  
+  Edit script parameters through intuitive forms
+- **Project Organization**  
+  Categorize scripts with drag-and-drop
+- **Dark/Light Mode Toggle**  
+- **GitHub Integration**  
+  Import scripts directly from raw GitHub URLs
+- **Cross-Platform**  
+  Runs on Windows, macOS and Linux
+
+## 💻 Screenshots
+
+| Light Mode | Dark Mode |
+|------------|-----------|
+| ![Light Interface](light-ui.png) | ![Dark Interface](dark-ui.png) |
+
+📦 Requirements
 Python 3.6+
 
 PyQt5
 
-bash
+🛠️ Built With
+PyQt5 - GUI Framework
+
+🤝 Contributing
+Pull requests are welcome! Please open an issue first to discuss changes.
+
+📜 License
+![MIT](https://img.shields.io/badge/License-MIT-blue.svg) © NorthFi
+
+## ⚙️ Installation
+
+```bash
 # Clone & run
 git clone https://github.com/NorthFi/mikrotik-script-manager-py.git
 cd mikrotik-script-manager-py
 pip install -r requirements.txt
 python src/main.py
-Tip: For a portable version, see Releases for pre-built binaries.
-
-🖼️ UI Showcase
-Light Mode	Dark Mode
-https://light-ui.png	https://dark-ui.png
-(Hover animations? Add a GIF showing theme switching!)
-
-🛠️ Built With
-PyQt5 – Modern GUI framework
-
-QScintilla – Syntax highlighting engine
-
-PyRouterOS – MikroTik API integration
-
-🤝 Contributing
-Fork → git checkout -b feature/your-idea
-
-Test changes: pytest tests/
-
-Submit a PR!
-
-Before major changes, open an issue to discuss.
-
-📜 License
-MIT © Daniel
-https://img.shields.io/badge/License-MIT-blue.svg
