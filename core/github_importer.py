@@ -1,3 +1,4 @@
+# root/core/github_importer.py
 import requests
 import os
 from urllib.parse import urlparse
@@ -14,7 +15,7 @@ class GitHubImporter:
         """Import script from GitHub URL with improved error handling"""
         try:
             parsed = urlparse(url)
-            if parsed.netloc not in cls.GITHUB_RAW_DOMAINS:
+            if parsed.hostname not in cls.GITHUB_RAW_DOMAINS or parsed.port is not None or parsed.username is not None or parsed.password is not None:
                 raise ValueError("Only GitHub raw URLs are allowed")
             
             # Validate URL scheme
@@ -22,7 +23,10 @@ class GitHubImporter:
                 raise ValueError("URL must start with http:// or https://")
             
             # Get content with timeout
-            response = requests.get(url, timeout=10)
+            # Refuse redirects that could lead to an unapproved host.
+            response = requests.get(url, timeout=10, allow_redirects=False)
+            if 300 <= response.status_code < 400:
+                raise ValueError("GitHub raw URL redirects are not allowed")
             response.raise_for_status()
             
             # Validate content
